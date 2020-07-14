@@ -34,6 +34,11 @@ public class MainActivity extends AppCompatActivity {
                 status.setText("X's turn - Tap to Play");
             }
         }
+        if((gamest[0]==1 || gamest[0] ==2) && (gamest[1]==1 || gamest[1] ==2) && (gamest[2]==1 || gamest[2] ==2) && (gamest[3]==1 || gamest[3] ==2) && (gamest[4]==1 || gamest[4] ==2) && (gamest[5]==1 || gamest[5] ==2) && (gamest[6]==1 || gamest[6] ==2) && (gamest[7]==1 || gamest[7] ==2) && (gamest[8]==1 || gamest[8] ==2)){
+                     active=false;
+                     TextView status = findViewById(R.id.status);
+                     status.setText("Draw ");
+                 }
 
         for (int[] win : winning) {
             if (gamest[win[0]] == gamest[win[1]]  && gamest[win[2]] == gamest[win[0]] && gamest[win[0]] != 0) {
@@ -46,18 +51,10 @@ public class MainActivity extends AppCompatActivity {
                     TextView status = findViewById(R.id.status);
                     status.setText(speech);
                     active = false;
-                }
-                 if((gamest[0]==1 || gamest[0] ==2) && (gamest[1]==1 || gamest[1] ==2) && (gamest[2]==1 || gamest[2] ==2) && (gamest[3]==1 || gamest[3] ==2) && (gamest[4]==1 || gamest[4] ==2) && (gamest[5]==1 || gamest[5] ==2) && (gamest[6]==1 || gamest[6] ==2) && (gamest[7]==1 || gamest[7] ==2) && (gamest[8]==1 || gamest[8] ==2)){
-                     active=false;
-                     TextView status = findViewById(R.id.status);
-                     status.setText("Draw ");
-                 }
-
-
+            }
         }
         if (!active) {
             reset(v);
-
         }
     }
 
